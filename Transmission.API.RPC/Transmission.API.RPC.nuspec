@@ -2,18 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
         <id>Transmission.API.RPC</id>
-        <version>2.1.2</version>
-        <authors>Beatlegger, FatihBAKIR, Andreschort, svonidze</authors>
-        <owners>Beatlegger</owners>
+        <version>3.0.0</version>
+        <authors>Der_pepe, Beatlegger, FatihBAKIR, Andreschort, svonidze</authors>
+        <owners>Der_pepe</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Client for Transmission API</description>
-        <copyright>Copyright 2019</copyright>
+        <copyright>Copyright 2022</copyright>
         <tags>Transmission RPC</tags>
         <iconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/2000px-Transmission_Icon.svg.png</iconUrl>
-        <repository type="Github" url="http://github.com/Beatlegger/Transmission.API.RPC" />
+        <repository type="Github" url="http://github.com/der-pepe/Transmission.API.RPC" />
         <dependencies>
             <group targetFramework=".NETStandard2.0">
-                <dependency id="Newtonsoft.Json" version="10.0.3" exclude="Build,Analyzers" />
+                <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
                 <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
                 <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
             </group>

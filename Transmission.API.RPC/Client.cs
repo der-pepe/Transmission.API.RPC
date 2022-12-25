@@ -304,6 +304,10 @@ namespace Transmission.API.RPC
 
         #endregion
 
+        #region Bandwidth groups methods
+
+        #endregion
+
         #region System
         /// <summary>
         /// See if your incoming peer port is accessible from the outside world (API: port-test)

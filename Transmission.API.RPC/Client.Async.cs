@@ -114,6 +114,8 @@ namespace Transmission.API.RPC
 			var arguments = new Dictionary<string, object>();
 			arguments.Add("fields", fields);
 
+//            arguments.Add("format", "table");
+
 			if (ids != null && ids.Length > 0)
 				arguments.Add("ids", ids);
 
