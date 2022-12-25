@@ -306,6 +306,19 @@ namespace Transmission.API.RPC
 
         #region Bandwidth groups methods
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="groups"></param>
+        /// <returns></returns>
+        public BandwidthGroupInfo BandwidthGroup(params string[] groups)
+        {
+            //var task = BandwidthGroupGetAsync(groups);
+            //task.WaitAndUnwrapException();
+            //return task.Result;
+            return null;
+        }
+
         #endregion
 
         #region System
