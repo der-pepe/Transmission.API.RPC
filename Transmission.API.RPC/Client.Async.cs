@@ -103,18 +103,17 @@ namespace Transmission.API.RPC
 			var response = await SendRequestAsync(request);
 		}
 
-		/// <summary>
-		/// Get fields of torrents from ids (API: torrent-get)
-		/// </summary>
-		/// <param name="fields">Fields of torrents</param>
-		/// <param name="ids">IDs of torrents (null or empty for get all torrents)</param>
-		/// <returns>Torrents info</returns>
-		public async Task<TransmissionTorrents> TorrentGetAsync(string[] fields, params int[] ids)
+        /// <summary>
+        /// Get fields of torrents from ids (API: torrent-get)
+        /// </summary>
+        /// <param name="fields">Fields of torrents</param>
+        /// <param name="ids">IDs of torrents (null or empty for get all torrents)</param>
+          /// <returns>Torrents info</returns>
+        public async Task<TransmissionTorrents> TorrentGetAsync(string[] fields, params int[] ids)
 		{
 			var arguments = new Dictionary<string, object>();
 			arguments.Add("fields", fields);
-
-//            arguments.Add("format", "table");
+//            arguments.Add("format", format);
 
 			if (ids != null && ids.Length > 0)
 				arguments.Add("ids", ids);
@@ -384,10 +383,15 @@ namespace Transmission.API.RPC
             request.Tag = ++CurrentTag;
 
             //Prepare http web request
-            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler()
+            {
+                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+            };
+            HttpClient httpClient = new HttpClient(httpClientHandler);
 
             HttpRequestMessage httpRequest = new HttpRequestMessage(HttpMethod.Post, Url);
             httpRequest.Headers.Add("X-Transmission-Session-Id", SessionID);
+
 
             if (_needAuthorization)
                 httpRequest.Headers.Add("Authorization", _authorization);
