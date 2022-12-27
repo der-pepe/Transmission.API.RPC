@@ -391,6 +391,7 @@ namespace Transmission.API.RPC
 
             HttpRequestMessage httpRequest = new HttpRequestMessage(HttpMethod.Post, Url);
             httpRequest.Headers.Add("X-Transmission-Session-Id", SessionID);
+            httpRequest.Headers.Add("Accept-Encoding", "gzip, deflate");
 
 
             if (_needAuthorization)
